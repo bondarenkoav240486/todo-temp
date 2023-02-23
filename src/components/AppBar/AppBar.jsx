@@ -1,11 +1,17 @@
+import AuthNav from "components/AuthNav/AuthNav";
+import UserMenu from "components/UserMenu/UserMenu";
+import { useAuth } from "hooks/useAuth";
 import Navigation from "../Navigation/Navigation";
+import css from './AppBar.module.css';
 
 const AppBar = () => {
+    const { isLoggedIn } = useAuth();
+
     return (
-        <div>
-            <Navigation />
-            {/* {isLoggedIn ? <UserMenu /> : <NavAuth />} Auth will appear */}
-        </div>
+      <header className={css.header}>
+        <Navigation />
+        {isLoggedIn ? <UserMenu /> : <AuthNav />}
+      </header>
     );
 }
 

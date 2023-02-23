@@ -5,13 +5,17 @@ import { HelmetProvider } from "react-helmet-async";
 import { useDispatch } from "react-redux";
 import { Route, Routes } from "react-router-dom";
 import { refreshUser } from "redux/auth/operations";
+import { PrivateRoute } from "utils/PrivateRoute";
 import { RestrictedRoute } from "utils/RestrictedRoute";
 import SharedLayout from "./SharedLayout";
 
 const HomePage = lazy(() => import('../pages/Home/Home'));
 const RegisterPage = lazy(() => import('../pages/Register/Register'));
 const LoginPage = lazy(() => import('../pages/LogIn/LogIn'));
-// const TasksPage = lazy(() => import('../pages/Tasks/Tasks'));
+const ImportantPage = lazy(() => import('../pages/Important/Important'));
+const ListsPage = lazy(() => import('../pages/Lists/Lists'));;
+
+const TasksPage = lazy(() => import('../pages/Tasks/Tasks'));
 
 const App = () => {
     const dispatch = useDispatch();
@@ -47,12 +51,30 @@ const App = () => {
                                 />
                             }
                         />
-                        {/* <Route
+                        <Route
+                            path="/important"
+                            element={
+                                <RestrictedRoute
+                                    redirectTo="/important"
+                                    component={<ImportantPage />}
+                                />
+                            }
+                        />
+                        <Route
+                            path="/lists"
+                            element={
+                                <RestrictedRoute
+                                    redirectTo="/lists"
+                                    component={<ListsPage />}
+                                />
+                            }
+                        />
+                        <Route
                             path="/tasks"
                             element={
                                 <PrivateRoute redirectTo="/login" component={<TasksPage />} />
                             }
-                        /> */}
+                        />
                         <Route path="*" element={<HomePage />} />
                     </Route>
                 </Routes>

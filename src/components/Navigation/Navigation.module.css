@@ -1,5 +1,5 @@
-.list{
+.nav__list{
     display: flex;
     list-style: none;
-    grid-gap: 10px;
+    flex-direction: column;
 }

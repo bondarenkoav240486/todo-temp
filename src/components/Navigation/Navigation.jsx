@@ -1,15 +1,29 @@
+import { useAuth } from 'hooks/useAuth';
+import { NavLink } from 'react-router-dom';
 import css from './Navigation.module.css';
 
+
 const Navigation = () => {
+    const { isLoggedIn } = useAuth();
+
     return (
-        <div className={css.sidenav}>
-            <ul className={css.list}>
-                <li className={css.list__item}>Home</li>
-                <li className={css.list__item}>My work</li>
-                <li className={css.list__item}>Important</li>
-                <li className={css.list__item}>Notification</li>
-            </ul>
-        </div>
+        <nav className={css.nav__list}>
+            <NavLink className={css.link} to="/">
+                Home
+            </NavLink>
+            <NavLink className={css.link} to="/lists">
+                My lists
+            </NavLink>
+            <NavLink className={css.link} to="/important">
+                Important
+            </NavLink>
+
+            {isLoggedIn && (
+                <NavLink className={css.link} to="/tasks">
+                    Tasks
+                </NavLink>
+            )}
+        </nav>
     );
 }
 
