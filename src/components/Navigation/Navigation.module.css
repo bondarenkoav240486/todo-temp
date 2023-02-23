@@ -1,5 +1,12 @@
 .nav__list{
     display: flex;
+    align-items: center;
     list-style: none;
     flex-direction: column;
+    background-color: #292f4c;
+    width: 60px;
+}
+
+.link_item__text{
+    display: none;
 }
