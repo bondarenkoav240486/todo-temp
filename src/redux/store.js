@@ -4,6 +4,7 @@ import storage from 'redux-persist/lib/storage';
 import persistReducer from "redux-persist/es/persistReducer";
 import { authReducer } from "./auth/slice";
 import { tasksReducer } from "./tasks/slice";
+import { listsReducer } from "./lists/slice";
 
 const authPersistConfig = {
     key: 'auth',
@@ -15,6 +16,7 @@ export const store = configureStore({
     reducer: {
         auth: persistReducer(authPersistConfig, authReducer),
         tasks: tasksReducer,
+        lists: listsReducer,
     },
 });
 
