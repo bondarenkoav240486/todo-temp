@@ -15,7 +15,6 @@ const LoginPage = lazy(() => import('../pages/LogIn/LogIn'));
 const ImportantPage = lazy(() => import('../pages/Important/Important'));
 const ListsPage = lazy(() => import('../pages/Lists/Lists'));;
 
-const TasksPage = lazy(() => import('../pages/Tasks/Tasks'));
 
 const App = () => {
     const dispatch = useDispatch();
@@ -69,12 +68,21 @@ const App = () => {
                                 />
                             }
                         />
-                        <Route
+                            {/* <Route
+                            path="/tasks"
+                            element={
+                                <RestrictedRoute
+                                    redirectTo="/tasks"
+                                    component={<TasksPage />}
+                                />
+                            }
+                        /> */}
+                        {/* <Route
                             path="/tasks"
                             element={
                                 <PrivateRoute redirectTo="/login" component={<TasksPage />} />
                             }
-                        />
+                        /> */}
                         <Route path="*" element={<HomePage />} />
                     </Route>
                 </Routes>

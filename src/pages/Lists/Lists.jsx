@@ -1,4 +1,5 @@
 import { Helmet } from "react-helmet";
+import Tasks from "pages/Tasks/Tasks";
 
 const Lists = () => {
     return (
@@ -6,7 +7,7 @@ const Lists = () => {
             <Helmet>
                 <title>My Lists</title>
             </Helmet>
-            <h1>Lists page</h1>
+            <Tasks />
         </div>
     );
 }
