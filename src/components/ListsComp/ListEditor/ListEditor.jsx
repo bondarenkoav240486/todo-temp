@@ -20,12 +20,21 @@ const ListEditor = () => {
     }
 
     return (
-        <form className={css.form} onSubmit={handleSubmit}>
-            <input name="listName" className={css.input} />
-            <button type="submit" className={css.button}>
-                Add list
-            </button>
-        </form>
+        <div className={css.lists_box}>
+            <form className={css.form} onSubmit={handleSubmit}>
+                <input name="listName" className={css.input_add} />
+                <button type="submit" className={css.button_add}>
+                    Add list
+                </button>
+            </form>
+
+            <form className={css.form}>
+                <input name="listName" className={css.input_filter} />
+                <button type="submit" className={css.button_filter}>
+                    Find list
+                </button>
+            </form>
+        </div>
     );
 }
 export default ListEditor;

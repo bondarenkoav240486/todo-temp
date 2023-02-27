@@ -1,0 +1,11 @@
+.lists_box {
+    display: flex;
+}
+
+.form{
+    margin-top: 25px;
+}
+
+.form:not(:last-child) {
+    margin-right: 100px;
+}

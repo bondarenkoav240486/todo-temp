@@ -13,7 +13,8 @@ const HomePage = lazy(() => import('../pages/Home/Home'));
 const RegisterPage = lazy(() => import('../pages/Register/Register'));
 const LoginPage = lazy(() => import('../pages/LogIn/LogIn'));
 const ImportantPage = lazy(() => import('../pages/Important/Important'));
-const ListsPage = lazy(() => import('../pages/Lists/Lists'));;
+const ListsPage = lazy(() => import('../pages/Lists/Lists'));
+const UserPage = lazy(() => import('../pages/User/User'));
 
 
 const App = () => {
@@ -68,7 +69,16 @@ const App = () => {
                                 />
                             }
                         />
-                            {/* <Route
+                        <Route
+                            path="/user"
+                            element={
+                                <RestrictedRoute
+                                    redirectTo="/user"
+                                    component={<UserPage />}
+                                />
+                            }
+                        />
+                        {/* <Route
                             path="/tasks"
                             element={
                                 <RestrictedRoute
