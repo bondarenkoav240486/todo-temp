@@ -9,3 +9,38 @@
 .form:not(:last-child) {
     margin-right: 100px;
 }
+
+/*
+.form {
+    position: absolute;
+    top: 10px;
+    width: 212px;
+    height: 84px;
+    border-radius: 5px;
+    border-color: #292f4c;
+    margin: 2px;
+    padding: 2px;
+}
+.input {
+    position: relative;
+    top: 5px;
+    width: 200px;
+    height: 30px;
+    border-radius: 8px;
+    border-color: #292f4c;
+    margin: 2px;
+    padding: 2px;
+}
+.button {
+    position: relative;
+    top: 5px;
+    left: 50px;
+    width: 100px;
+    height: 30px;
+    font-weight: 700;
+    background: #f1eeee;
+    border-radius: 35px;
+    margin: 2px;
+    padding: 2px;
+}
+*/
