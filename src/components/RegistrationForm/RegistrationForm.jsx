@@ -1,5 +1,6 @@
 import { useDispatch } from 'react-redux';
 import { register } from 'redux/auth/operations';
+import { Link } from 'react-router-dom';
 import css from './RegistrationForm.module.css';
 
 const RegistrationForm = () => {
@@ -45,6 +46,7 @@ const RegistrationForm = () => {
                 <button type="submit" className={css.button}>Sing up</button>
 
             </form>
+            <p>If you have an account <Link to='/login'>Log in</Link></p>
         </div>
     );
 }

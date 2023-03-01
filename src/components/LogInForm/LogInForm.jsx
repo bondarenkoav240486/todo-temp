@@ -1,5 +1,6 @@
 import { useDispatch } from 'react-redux';
 import { logIn } from 'redux/auth/operations';
+import { Link } from 'react-router-dom';
 import css from './LogInForm.module.css';
 
 const LogInForm = () => {
@@ -35,7 +36,9 @@ const LogInForm = () => {
                 </label>
                 <button type="submit" className={css.button} >Log in</button>
             </form>
-
+            <p>If you don’t have an account <Link to='/register'>Sing up</Link></p>
+         
+            
         </div>
     );
 }
