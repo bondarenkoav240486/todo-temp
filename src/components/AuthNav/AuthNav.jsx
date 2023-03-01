@@ -5,7 +5,7 @@ const AuthNav = () => {
     return (
         <div className={css.auth_nav__box}>
             <NavLink className={css.link} to="/register">
-                Register
+                Sing up
             </NavLink>
             <NavLink className={css.link} to="/login">
                 Log In

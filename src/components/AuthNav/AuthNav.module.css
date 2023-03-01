@@ -1,3 +1,9 @@
+.auth_nav__box {
+    position: absolute;
+    right: 53px;
+    top: 27px;
+}
+
 .link:not(:last-child) {
     margin-right: 10px;
 }
