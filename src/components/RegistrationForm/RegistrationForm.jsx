@@ -1,10 +1,15 @@
 import { useDispatch } from 'react-redux';
 import { register } from 'redux/auth/operations';
-import { Link } from 'react-router-dom';
 import css from './RegistrationForm.module.css';
+import {
+    setNewUserAction
+} from "../../redux/auth/slice";
 
 const RegistrationForm = () => {
     const dispatch = useDispatch();
+    const setNewUser = (par) => ( 
+        dispatch(setNewUserAction(par))
+    );
 
     const handleSubmit = e => {
         e.preventDefault();
@@ -19,6 +24,8 @@ const RegistrationForm = () => {
             email: email.value,
             password: password.value,
         }
+
+        setNewUser(newUser);
 
         dispatch(register(newUser));
         form.reset();
@@ -46,7 +53,6 @@ const RegistrationForm = () => {
                 <button type="submit" className={css.button}>Sing up</button>
 
             </form>
-            <p>If you have an account <Link to='/login'>Log in</Link></p>
         </div>
     );
 }
